@@ -61,7 +61,8 @@ pom.xml
 
 1.Clone the Repository
 
-git clone <your-repo-link>
+git clone https://github.com/DevrajKalpure/CourseSearchwithElasticsearch-.git
+
 cd Intern_UndoSchool_CourseSearch
 
 ++++++++++++++++++++++++++++++++++++++++++++++++++
@@ -137,3 +138,11 @@ Example Response
   ]
 }
 
+Sample Endpoints
+
+http://localhost:8080/api/search
+http://localhost:8080/api/search?q=python
+http://localhost:8080/api/search?category=Art&type=ONE_TIME
+http://localhost:8080/api/search?minAge=10&maxAge=14
+http://localhost:8080/api/search?minPrice=50&maxPrice=150&sort=priceDesc
+http://localhost:8080/api/search?startDate=2025-07-01T00:00:00Z

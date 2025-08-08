@@ -21,25 +21,62 @@ public class CourseSearchService {
 	@Autowired
 	private CourseRepository courseRepository;
 
-    public List<CourseDocument> search(String q, String category, String type,
-                                       Integer minAge, Integer maxAge,
-                                       Double minPrice, Double maxPrice,
-                                       Instant startDate,
-                                       String sort,
-                                       int page, int size) {
+	public List<CourseDocument> search(String q, String category, String type,
+            Integer minAge, Integer maxAge,
+            Double minPrice, Double maxPrice,
+            Instant startDate,
+            String sort,
+            int page, int size) {
 
-        Pageable pageable = getPageable(sort, page, size);
+Pageable pageable = getPageable(sort, page, size);
 
-        // Simple keyword search for demo; for full filters, you would implement a custom query
+if (startDate != null) {
+    // Filter by nextSessionDate >= startDate
+    return courseRepository.findByNextSessionDateGreaterThanEqual(startDate, pageable).getContent();
+}
+if (q != null && !q.isBlank()) {
+// Search by keyword only for now
+return courseRepository.findByTitleContainingIgnoreCaseOrDescriptionContainingIgnoreCase(q, q, pageable).getContent();
+}
 
-        if (q == null || q.isBlank()) {
-            // Return all paginated
-            return courseRepository.findAll(pageable).getContent();
-        }
+if (category != null && !category.isEmpty() && type != null && !type.isEmpty() && minAge != null && maxAge != null) {
+return courseRepository
+.findByCategoryIgnoreCaseAndTypeIgnoreCaseAndMinAgeLessThanEqualAndMaxAgeGreaterThanEqual(
+category, type, maxAge, minAge, pageable)
+.getContent();
+}
 
-        // For this example, search by keyword only.
-        return courseRepository.findByTitleContainingIgnoreCaseOrDescriptionContainingIgnoreCase(q, q, pageable).getContent();
-    }
+if (category != null && !category.isEmpty() && type != null && !type.isEmpty()) {
+return courseRepository
+.findByCategoryIgnoreCaseAndTypeIgnoreCase(category, type, pageable)
+.getContent();
+}
+
+if (category != null && !category.isEmpty()) {
+return courseRepository.findByCategoryIgnoreCase(category, pageable).getContent();
+}
+
+// fallback to find all
+return courseRepository.findAll(pageable).getContent();
+}
+
+	/*
+	 * public List<CourseDocument> search(String q, String category, String type,
+	 * Integer minAge, Integer maxAge, Double minPrice, Double maxPrice, Instant
+	 * startDate, String sort, int page, int size) {
+	 * 
+	 * Pageable pageable = getPageable(sort, page, size);
+	 * 
+	 * // Simple keyword search for demo; for full filters, you would implement a
+	 * custom query
+	 * 
+	 * if (q == null || q.isBlank()) { // Return all paginated return
+	 * courseRepository.findAll(pageable).getContent(); }
+	 * 
+	 * // For this example, search by keyword only. return courseRepository.
+	 * findByTitleContainingIgnoreCaseOrDescriptionContainingIgnoreCase(q, q,
+	 * pageable).getContent(); }
+	 */
 
     private Pageable getPageable(String sort, int page, int size) {
         Sort sortObj;
