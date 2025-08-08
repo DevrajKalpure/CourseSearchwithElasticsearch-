@@ -1,0 +1,122 @@
+[
+  {
+    "id": "C001",
+    "title": "Math Basics",
+    "description": "Intro to basic math",
+    "category": "Math",
+    "type": "COURSE",
+    "gradeRange": "1st–3rd",
+    "minAge": 6,
+    "maxAge": 8,
+    "price": 299.99,
+    "nextSessionDate": "2025-09-01T10:00:00Z"
+  },
+  {
+    "id": "C002",
+    "title": "Science Explorers",
+    "description": "Discover the wonders of science",
+    "category": "Science",
+    "type": "COURSE",
+    "gradeRange": "2nd–4th",
+    "minAge": 7,
+    "maxAge": 9,
+    "price": 349.99,
+    "nextSessionDate": "2025-09-03T14:00:00Z"
+  },
+  {
+    "id": "C003",
+    "title": "English Grammar Fun",
+    "description": "Learn grammar with fun activities",
+    "category": "English",
+    "type": "COURSE",
+    "gradeRange": "3rd–5th",
+    "minAge": 8,
+    "maxAge": 10,
+    "price": 279.00,
+    "nextSessionDate": "2025-09-05T11:00:00Z"
+  },
+  {
+    "id": "C004",
+    "title": "Creative Writing",
+    "description": "Boost your writing skills",
+    "category": "English",
+    "type": "COURSE",
+    "gradeRange": "4th–6th",
+    "minAge": 9,
+    "maxAge": 11,
+    "price": 320.00,
+    "nextSessionDate": "2025-09-07T15:00:00Z"
+  },
+  {
+    "id": "C005",
+    "title": "Fun with Fractions",
+    "description": "Understand fractions easily",
+    "category": "Math",
+    "type": "COURSE",
+    "gradeRange": "3rd–5th",
+    "minAge": 8,
+    "maxAge": 10,
+    "price": 289.99,
+    "nextSessionDate": "2025-09-10T09:00:00Z"
+  },
+  {
+    "id": "C006",
+    "title": "Junior Coders",
+    "description": "Learn coding basics",
+    "category": "Technology",
+    "type": "COURSE",
+    "gradeRange": "5th–7th",
+    "minAge": 10,
+    "maxAge": 12,
+    "price": 499.99,
+    "nextSessionDate": "2025-09-12T12:00:00Z"
+  },
+  {
+    "id": "C007",
+    "title": "Art & Craft",
+    "description": "Explore your creativity",
+    "category": "Arts",
+    "type": "COURSE",
+    "gradeRange": "1st–4th",
+    "minAge": 6,
+    "maxAge": 9,
+    "price": 199.00,
+    "nextSessionDate": "2025-09-15T10:30:00Z"
+  },
+  {
+    "id": "C008",
+    "title": "Music for Beginners",
+    "description": "Start your music journey",
+    "category": "Music",
+    "type": "COURSE",
+    "gradeRange": "2nd–5th",
+    "minAge": 7,
+    "maxAge": 10,
+    "price": 249.00,
+    "nextSessionDate": "2025-09-17T16:00:00Z"
+  },
+  {
+    "id": "C009",
+    "title": "Basic Spanish",
+    "description": "Learn basic Spanish words and phrases",
+    "category": "Languages",
+    "type": "COURSE",
+    "gradeRange": "4th–6th",
+    "minAge": 9,
+    "maxAge": 11,
+    "price": 369.99,
+    "nextSessionDate": "2025-09-20T13:00:00Z"
+  },
+  {
+    "id": "C010",
+    "title": "Young Scientists",
+    "description": "Hands-on science experiments",
+    "category": "Science",
+    "type": "COURSE",
+    "gradeRange": "3rd–5th",
+    "minAge": 8,
+    "maxAge": 10,
+    "price": 379.00,
+    "nextSessionDate": "2025-09-22T10:00:00Z"
+  }
+]
